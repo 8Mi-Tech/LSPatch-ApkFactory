@@ -66,7 +66,7 @@ jobs:
         run: |
           new_filename="${{ matrix.nickname }}-${{steps.apk-info.outputs.versionNum}}.apk"
           cp temp.apk $new_filename
-          java -jar ./lspatch.jar -v true -l 2 -o "output/LSPatch" $new_filename
+          java -jar ./lspatch.jar -v --manager -l 2 -o "output/LSPatch" $new_filename
       - name: "Publish to Github Artifact"
         uses: "actions/upload-artifact@v3"
         with:
