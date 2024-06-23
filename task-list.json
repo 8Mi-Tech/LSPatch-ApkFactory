@@ -1,0 +1,12 @@
+{
+    "include": [
+      {
+        "nickname": "支付宝",
+        "type": "wandoujia",
+        "data": {
+            "app_id_num":"279979",
+            "history_id_num":""
+        }
+      }
+    ]
+  }

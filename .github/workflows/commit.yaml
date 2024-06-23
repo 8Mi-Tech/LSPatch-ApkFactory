@@ -1,0 +1,12 @@
+name: Commit
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-commit:
+    name: Build Commit
+    uses: ./.github/workflows/core.yaml
+    with:
+        tasklist-filepath: "./task-list.json"
+    secrets: inherit

@@ -1,0 +1,76 @@
+name: "Core"
+on:
+  workflow_call:
+    inputs:
+      tasklist-filepath:
+        required: false
+        type: "string"
+      is-release:
+        required: true
+        type: "boolean"
+        default: false
+
+jobs:
+  job-init:
+    runs-on: "ubuntu-latest"
+    outputs:
+      result: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v3"
+      - id: "set-matrix"
+        run: |
+          echo "matrix="`cat ${{ inputs.tasklist-filepath }} `"">> $GITHUB_OUTPUT
+
+  job_patch:
+    needs: job-init
+    runs-on: "ubuntu-latest"
+    continue-on-error: true
+    strategy:
+      matrix: ${{ fromJSON(needs.job-init.outputs.result) }}
+    name: ${{ matrix.nickname }}
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v3
+      - name: "Setup JDK"
+        uses: "actions/setup-java@v4"
+        with:
+          java-version: "17"
+          #cache: "gradle"
+          java-package: "jdk"
+          distribution: "liberica"
+      - name: "Get Apk Download URL (from WanDouJia)"
+        if: ${{ matrix.type == 'wandoujia' }}
+        id: get-download-url
+        run: |
+          # 点我展开
+          if [[ ${{matrix.data.history_id_num}} == "" ]]; then
+            echo "url=`curl -s $(curl -s "https://www.wandoujia.com/apps/${{matrix.data.app_id_num}}" \
+              | grep "history_" | head -n1 | awk '$1=$1' | sed -e 's/.*href="\(.*\)\" .*/\1/') \
+              | grep "data-href" | head -n1 | awk '$1=$1'|  sed -e 's/.*href="\(.*\)\" .*/\1/'`" >> $GITHUB_OUTPUT
+          else
+            echo "url=`curl -s "https://www.wandoujia.com/apps/${{matrix.data.app_id_num}}/history_v${{matrix.data.history_id_num}}" \
+              | grep "data-href" | head -n1 | awk '$1=$1'|  sed -e 's/.*href="\(.*\)\" .*/\1/' >> $GITHUB_OUTPUT
+      - name: "Downloading Apk File"
+        run: |
+          # 点我展开
+          wget -O "temp.apk" "${{steps.get-download-url.outputs.url}}"
+      - name: "Get Apk Info"
+        id: "apk-info"
+        uses: "JantHsueh/get-apk-info-action@master"
+        with:
+          apkPath: "temp.apk"
+        #应用名：${{steps.apk-info.outputs.name}}
+        #版本号：${{steps.apk-info.outputs.versionCode}}
+      - name: "Patch LSPatch Lib"
+        run: |
+          new-filename="${{steps.apk-info.outputs.name}}-${{steps.apk-info.outputs.versionCode}}.apk"
+          cp temp.apk $new-filename
+          java -jar ./lspatch.jar -v true -l 2 -o "output/LSPatch" $new-filename
+      - name: "Publish to Github Artifact"
+        uses: "actions/upload-artifact@v3"
+        with:
+          name: ${{steps.apk-info.outputs.name}}
+          path: output
+
+          
