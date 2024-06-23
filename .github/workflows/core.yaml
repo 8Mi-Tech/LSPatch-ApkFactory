@@ -44,7 +44,7 @@ jobs:
         id: get-download-url
         run: |
           # 点我展开
-          if [[ ${{matrix.data.history_id_num}} == "" ]]; then
+          if [[ ${{matrix.data.history_id_num == '' }} ]]; then
             echo "url=`curl -s $(curl -s "https://www.wandoujia.com/apps/${{matrix.data.app_id_num}}" \
               | grep "history_" | head -n1 | awk '$1=$1' | sed -e 's/.*href="\(.*\)\" .*/\1/') \
               | grep "data-href" | head -n1 | awk '$1=$1'|  sed -e 's/.*href="\(.*\)\" .*/\1/'`" >> $GITHUB_OUTPUT
