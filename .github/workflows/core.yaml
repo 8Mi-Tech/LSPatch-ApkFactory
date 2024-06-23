@@ -61,11 +61,10 @@ jobs:
         uses: "JantHsueh/get-apk-info-action@master"
         with:
           apkPath: "temp.apk"
-        #应用名：${{steps.apk-info.outputs.name}}
-        #版本号：${{steps.apk-info.outputs.versionCode}}
+        #版本号：${{steps.apk-info.outputs.versionNum}}
       - name: "Patch LSPatch Lib"
         run: |
-          new-filename="${{steps.apk-info.outputs.name}}-${{steps.apk-info.outputs.versionCode}}.apk"
+          new-filename="${{ matrix.nickname }}-${{steps.apk-info.outputs.versionNum}}.apk"
           cp temp.apk $new-filename
           java -jar ./lspatch.jar -v true -l 2 -o "output/LSPatch" $new-filename
       - name: "Publish to Github Artifact"
