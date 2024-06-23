@@ -7,6 +7,14 @@
             "app_id_num":"279979",
             "history_id_num":""
         }
+      },
+      {
+        "nickname": "微信",
+        "type": "wandoujia",
+        "data": {
+            "app_id_num":"596157",
+            "history_id_num":""
+        }
       }
     ]
   }
