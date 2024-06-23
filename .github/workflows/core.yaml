@@ -64,9 +64,9 @@ jobs:
         #版本号：${{steps.apk-info.outputs.versionNum}}
       - name: "Patch LSPatch Lib"
         run: |
-          new-filename="${{ matrix.nickname }}-${{steps.apk-info.outputs.versionNum}}.apk"
-          cp temp.apk $new-filename
-          java -jar ./lspatch.jar -v true -l 2 -o "output/LSPatch" $new-filename
+          new_filename="${{ matrix.nickname }}-${{steps.apk-info.outputs.versionNum}}.apk"
+          cp temp.apk $new_filename
+          java -jar ./lspatch.jar -v true -l 2 -o "output/LSPatch" $new_filename
       - name: "Publish to Github Artifact"
         uses: "actions/upload-artifact@v3"
         with:
