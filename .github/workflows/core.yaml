@@ -68,9 +68,10 @@ jobs:
           cp temp.apk $new_filename
           java -jar ./lspatch.jar -v --manager -l 2 -o "output/LSPatch" $new_filename
       - name: "Publish to Github Artifact"
-        uses: "actions/upload-artifact@v3"
+        uses: "actions/upload-artifact@v4"
         with:
           name: ${{ matrix.nickname }}-${{steps.apk-info.outputs.versionNum}}
           path: output
+          retention-days: 1
 
           
