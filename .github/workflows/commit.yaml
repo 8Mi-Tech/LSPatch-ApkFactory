@@ -9,4 +9,5 @@ jobs:
     uses: ./.github/workflows/core.yaml
     with:
         tasklist-filepath: "./task-list.json"
+        is-release: false
     secrets: inherit
