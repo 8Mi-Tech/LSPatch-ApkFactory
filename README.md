@@ -3,7 +3,7 @@
 本仓库基于如下分支打包
 
 | 分支 | 仓库地址 | 发布地址 | 状态 |
-| - | - | - |
+| - | - | - | - |
 | LSPatch | [→](https://github.com/LSPosed/LSPatch) | [↑](https://github.com/LSPosed/LSPatch/releases/tag/v0.6) | √ |
 | OPatch |
 | NPatch |
