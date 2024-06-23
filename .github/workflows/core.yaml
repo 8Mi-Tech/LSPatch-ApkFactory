@@ -12,6 +12,7 @@ on:
 
 jobs:
   job-init:
+    name: "Init"
     runs-on: "ubuntu-latest"
     outputs:
       result: ${{ steps.set-matrix.outputs.matrix }}
@@ -28,7 +29,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix: ${{ fromJSON(needs.job-init.outputs.result) }}
-    name: ${{ matrix.nickname }}
+    name: "Repacking ${{ matrix.nickname }}"
     steps:
       - name: "Checkout"
         uses: "actions/checkout@v4"
@@ -64,9 +65,10 @@ jobs:
         #版本号：${{steps.apk-info.outputs.versionNum}}
       - name: "Patch LSPatch Lib"
         run: |
+          # 点我展开
           new_filename="${{ matrix.nickname }}-${{steps.apk-info.outputs.versionNum}}.apk"
           cp temp.apk $new_filename
-          java -jar ./lspatch.jar -v --manager -l 2 -o "output/LSPatch" $new_filename
+          java -jar ./lspatch.jar -v --manager -l 2 -o "output" $new_filename
       - name: "Publish to Github Artifact"
         uses: "actions/upload-artifact@v4"
         with:
