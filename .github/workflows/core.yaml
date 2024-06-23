@@ -17,7 +17,7 @@ jobs:
       result: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v4"
       - id: "set-matrix"
         run: |
           echo "matrix="`cat ${{ inputs.tasklist-filepath }} `"">> $GITHUB_OUTPUT
@@ -31,7 +31,7 @@ jobs:
     name: ${{ matrix.nickname }}
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v3
+        uses: "actions/checkout@v4"
       - name: "Setup JDK"
         uses: "actions/setup-java@v4"
         with:
@@ -70,7 +70,7 @@ jobs:
       - name: "Publish to Github Artifact"
         uses: "actions/upload-artifact@v3"
         with:
-          name: ${{steps.apk-info.outputs.name}}
+          name: ${{ matrix.nickname }}-${{steps.apk-info.outputs.versionNum}}
           path: output
 
           
