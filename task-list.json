@@ -33,6 +33,14 @@
         }
       },
       {
+        "nickname": "抖音极速版",
+        "type": "wandoujia",
+        "data": {
+            "app_id_num":"8060330",
+            "history_id_num":""
+        }
+      },
+      {
         "nickname": "TikTok",
         "type": "direct",
         "data": {

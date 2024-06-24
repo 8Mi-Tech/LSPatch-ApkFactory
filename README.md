@@ -21,4 +21,5 @@
 | 微信 | 豌豆荚 | latest |
 | Soul | 豌豆荚 | latest |
 | 抖音 | 豌豆荚 | latest |
+| 抖音极速版 | 豌豆荚 | latest |
 | TikTok | ApkPure | latest |
