@@ -25,14 +25,6 @@
         }
       },
       {
-        "nickname": "Soul",
-        "type": "wandoujia",
-        "data": {
-            "app_id_num":"7451210",
-            "history_id_num":""
-        }
-      },
-      {
         "nickname": "TikTok",
         "type": "direct",
         "data": {
