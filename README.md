@@ -10,9 +10,8 @@
 | 分支 | 版本 | 仓库地址 | 发布地址 | 状态 | 原因 |
 | - | - | - | - | - | - |
 | LSPatch | 0.6 | [GitHub](https://github.com/LSPosed/LSPatch) | [GitHub](https://github.com/LSPosed/LSPatch/releases/tag/v0.6) | √ |
-| OPatch | 0.0.7 | 无 | [Telegram](https://t.me/QToolCI/302) | × | 需要pr对应的jar文件 |
+| OPatch | 0.0.7 | 无 | [Telegram](https://t.me/NPatch/286)<br>[Telegram(已不维护)](https://t.me/QToolCI/302) | × | 需要pr对应的jar文件 |
 | NPatch | 0.6.1(426) | 无 | [Telegram](https://t.me/NPatch/253) | × | 同上 |
-| ONPatch | 0.0.7-alpha.1 | 无 | [Telegram](https://t.me/NPatch/286) | × | 同上 |
 
 本仓库自动打包的项目
 | 软件名称 | 来源 | 版本 |
