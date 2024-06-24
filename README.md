@@ -1,8 +1,8 @@
 # LSPatch-ApkFactory
 > [!TIP]
 > 一个基于LSPatch的打包工具，自动为常见应用打LSPatch补丁的仓库<br>
-本仓库打包的任何应用都需要搭配对应的加载器来管理<br>
-你没看错，本仓库不管集成模式，只管本地模式<br>
+包括 OPatch / NPatch / ONPatch <br>
+本仓库打包的任何应用都需要搭配对应的加载器来管理(仅打包本地模式)<br>
 例如 `TikTok-35.3.2-398-lspatched.apk` 对应的加载器是 `LSPatch` , 因为文件名包含`lspatched`<br>
 在此希望 LSPatch能恢复更新，且大一统，且多选项，且最新，（我可不想一个应用包得服务多个分支）
 
