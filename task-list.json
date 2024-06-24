@@ -41,6 +41,14 @@
         }
       },
       {
+        "nickname": "QQ",
+        "type": "wandoujia",
+        "data": {
+            "app_id_num":"566489",
+            "history_id_num":""
+        }
+      },
+      {
         "nickname": "TikTok",
         "type": "direct",
         "data": {
