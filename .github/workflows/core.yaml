@@ -61,7 +61,7 @@ jobs:
           aria2c --out "temp.apk" ${{matrix.data.url}}
       - name: "Get Apk Info"
         id: "apk-info"
-        uses: "JantHsueh/get-apk-info-action@master"
+        uses: "8Mi-Tech/get-apk-info-action@master"
         with:
           apkPath: "temp.apk"
         #版本号：${{steps.apk-info.outputs.versionNum}}
