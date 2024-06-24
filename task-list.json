@@ -25,6 +25,14 @@
         }
       },
       {
+        "nickname": "抖音",
+        "type": "wandoujia",
+        "data": {
+            "app_id_num":"7461948",
+            "history_id_num":""
+        }
+      },
+      {
         "nickname": "TikTok",
         "type": "direct",
         "data": {
