@@ -58,7 +58,7 @@ jobs:
         if: ${{ matrix.type == 'direct' }}
         run: |
           # 点我展开
-          sudo apt install aria2c -y
+          # sudo apt install aria2 -y
           aria2c --out "temp.apk" ${{matrix.data.url}}
       - name: "Get Apk Info"
         id: "apk-info"
