@@ -1,59 +1,59 @@
 {
-    "include": [
-      {
-        "nickname": "支付宝",
-        "type": "wandoujia",
-        "data": {
-            "app_id_num":"279979",
-            "history_id_num":""
-        }
-      },
-      {
-        "nickname": "微信",
-        "type": "wandoujia",
-        "data": {
-            "app_id_num":"596157",
-            "history_id_num":""
-        }
-      },
-      {
-        "nickname": "Soul",
-        "type": "wandoujia",
-        "data": {
-            "app_id_num":"7451210",
-            "history_id_num":""
-        }
-      },
-      {
-        "nickname": "抖音",
-        "type": "wandoujia",
-        "data": {
-            "app_id_num":"7461948",
-            "history_id_num":""
-        }
-      },
-      {
-        "nickname": "抖音极速版",
-        "type": "wandoujia",
-        "data": {
-            "app_id_num":"8060330",
-            "history_id_num":""
-        }
-      },
-      {
-        "nickname": "QQ",
-        "type": "wandoujia",
-        "data": {
-            "app_id_num":"566489",
-            "history_id_num":""
-        }
-      },
-      {
-        "nickname": "TikTok",
-        "type": "direct",
-        "data": {
-            "url": "https://d.apkpure.com/b/APK/com.zhiliaoapp.musically?version=latest"
-        }
+  "include": [
+    {
+      "nickname": "支付宝",
+      "type": "wandoujia",
+      "data": {
+        "app_id_num": "279979",
+        "history_id_num": ""
       }
-    ]
-  }
+    },
+    {
+      "nickname": "微信",
+      "type": "wandoujia",
+      "data": {
+        "app_id_num": "596157",
+        "history_id_num": ""
+      }
+    },
+    {
+      "nickname": "Soul",
+      "type": "wandoujia",
+      "data": {
+        "app_id_num": "7451210",
+        "history_id_num": ""
+      }
+    },
+    {
+      "nickname": "抖音",
+      "type": "wandoujia",
+      "data": {
+        "app_id_num": "7461948",
+        "history_id_num": ""
+      }
+    },
+    {
+      "nickname": "抖音极速版",
+      "type": "wandoujia",
+      "data": {
+        "app_id_num": "8060330",
+        "history_id_num": ""
+      }
+    },
+    {
+      "nickname": "QQ",
+      "type": "wandoujia",
+      "data": {
+        "app_id_num": "566489",
+        "history_id_num": ""
+      }
+    },
+    {
+      "nickname": "TikTok",
+      "type": "direct",
+      "data": {
+        "url": "https://d.apkpure.com/b/APK/com.zhiliaoapp.musically?version=latest"
+      }
+    }
+  ]
+}
