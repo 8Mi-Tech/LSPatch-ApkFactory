@@ -58,7 +58,7 @@ jobs:
         if: ${{ matrix.type == 'direct' }}
         run: |
           # 点我展开
-          wget -O "temp.apk" ${{matrix.data.url}}" 
+          wget -O "temp.apk" ${{matrix.data.url}}
       - name: "Get Apk Info"
         id: "apk-info"
         uses: "JantHsueh/get-apk-info-action@master"
