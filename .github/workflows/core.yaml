@@ -46,9 +46,10 @@ jobs:
         run: |
           # 点我展开
           if [[ ${{matrix.data.history_id_num == '' }} ]]; then
-            echo "url=`curl -s $(curl -s "https://www.wandoujia.com/apps/${{matrix.data.app_id_num}}" \
-              | grep "history_" | head -n1 | awk '$1=$1' | sed -e 's/.*href="\(.*\)\" .*/\1/') \
-              | grep "data-href" | head -n1 | awk '$1=$1'|  sed -e 's/.*href="\(.*\)\" .*/\1/'`" >> $GITHUB_OUTPUT
+            echo "url=`curl -I 'https://www.wandoujia.com/apps/${{matrix.data.app_id_num}}/download/dot?ch=detail_normal_dl' \
+              -H 'authority: www.wandoujia.com' \
+              -H 'referer: https://www.wandoujia.com/apps/${{matrix.data.app_id_num}}' \
+              | grep "location:" |  sed 's#location: ##'`" >> $GITHUB_OUTPUT
           else
             echo "url=`curl -s "https://www.wandoujia.com/apps/${{matrix.data.app_id_num}}/history_v${{matrix.data.history_id_num}}" \
               | grep "data-href" | head -n1 | awk '$1=$1'|  sed -e 's/.*href="\(.*\)\" .*/\1/'`" >> $GITHUB_OUTPUT
