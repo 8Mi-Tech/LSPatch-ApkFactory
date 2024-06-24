@@ -52,8 +52,15 @@ jobs:
               | grep "location:" |  sed 's#location: ##'`" >> $GITHUB_OUTPUT
           else
             echo "url=`curl -s "https://www.wandoujia.com/apps/${{matrix.data.app_id_num}}/history_v${{matrix.data.history_id_num}}" \
-              | grep "data-href" | head -n1 | awk '$1=$1'|  sed -e 's/.*href="\(.*\)\" .*/\1/'`" >> $GITHUB_OUTPUT
+              | grep "data-href" | head -n1 | awk '$1=$1'|  sed -e 's/.*href="\(.*\)\" .*/\1/'`" 
           fi
+      
+      - name: "Get Apk Download URL (from Direct)"
+        if: ${{ matrix.type == 'direct' }}
+        id: get-download-url
+        run: |
+          # 点我展开
+          echo "url=${{matrix.data.url}}" >> $GITHUB_OUTPUT
       - name: "Downloading Apk File"
         run: |
           # 点我展开
