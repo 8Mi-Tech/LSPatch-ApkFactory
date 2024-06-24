@@ -40,31 +40,25 @@ jobs:
           #cache: "gradle"
           java-package: "jdk"
           distribution: "liberica"
-      - name: "Get Apk Download URL (from WanDouJia)"
+      - name: "Download Apk (from WanDouJia)"
         if: ${{ matrix.type == 'wandoujia' }}
-        id: get-download-url
         run: |
           # 点我展开
           if [[ ${{matrix.data.history_id_num == '' }} ]]; then
-            echo "url=`curl -I 'https://www.wandoujia.com/apps/${{matrix.data.app_id_num}}/download/dot?ch=detail_normal_dl' \
+            url=`curl -I 'https://www.wandoujia.com/apps/${{matrix.data.app_id_num}}/download/dot?ch=detail_normal_dl' \
               -H 'authority: www.wandoujia.com' \
               -H 'referer: https://www.wandoujia.com/apps/${{matrix.data.app_id_num}}' \
-              | grep "location:" |  sed 's#location: ##'`" >> $GITHUB_OUTPUT
+              | grep "location:" |  sed 's#location: ##'`
           else
-            echo "url=`curl -s "https://www.wandoujia.com/apps/${{matrix.data.app_id_num}}/history_v${{matrix.data.history_id_num}}" \
-              | grep "data-href" | head -n1 | awk '$1=$1'|  sed -e 's/.*href="\(.*\)\" .*/\1/'`" 
+            url=`curl -s "https://www.wandoujia.com/apps/${{matrix.data.app_id_num}}/history_v${{matrix.data.history_id_num}}" \
+              | grep "data-href" | head -n1 | awk '$1=$1'|  sed -e 's/.*href="\(.*\)\" .*/\1/'`
           fi
-      
-      - name: "Get Apk Download URL (from Direct)"
+          wget -O "temp.apk" $url
+      - name: "Download Apk (from Direct)"
         if: ${{ matrix.type == 'direct' }}
-        id: get-download-url
         run: |
           # 点我展开
-          echo "url=${{matrix.data.url}}" >> $GITHUB_OUTPUT
-      - name: "Downloading Apk File"
-        run: |
-          # 点我展开
-          wget -O "temp.apk" "${{steps.get-download-url.outputs.url}}"
+          wget -O "temp.apk" ${{matrix.data.url}}" 
       - name: "Get Apk Info"
         id: "apk-info"
         uses: "JantHsueh/get-apk-info-action@master"
