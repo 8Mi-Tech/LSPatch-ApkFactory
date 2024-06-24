@@ -58,7 +58,8 @@ jobs:
         if: ${{ matrix.type == 'direct' }}
         run: |
           # 点我展开
-          wget -O "temp.apk" ${{matrix.data.url}}
+          apt install aria2c -y
+          aria2c --out "temp.apk" ${{matrix.data.url}}
       - name: "Get Apk Info"
         id: "apk-info"
         uses: "JantHsueh/get-apk-info-action@master"
