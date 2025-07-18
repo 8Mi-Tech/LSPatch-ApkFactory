@@ -1,7 +1,7 @@
 # LSPatch-ApkFactory
 > [!TIP]
 > 一个基于LSPatch的打包工具，自动为常见应用打LSPatch补丁的仓库<br>
-包括 OPatch(ONPatch) / NPatch <br>
+包括 OPatch / ONPatch / NPatch <br>
 本项目所提及的OPatch均指代现在的ONPatch
 本项目打包的任何应用都需要搭配对应的加载器来管理(仅打包本地模式)<br>
 例如 `TikTok-35.3.2-398-lspatched.apk` 对应的加载器是 `LSPatch` , 因为文件名包含`lspatched`<br>
