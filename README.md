@@ -10,10 +10,9 @@
 本仓库基于如下分支打包 请注意版本号不能低于这个表格内的
 | 分支 | 版本 | 仓库地址 | 发布地址 | 状态 | 原因 |
 | - | - | - | - | - | - |
-| LSPatch | 0.6 | [GitHub](https://github.com/LSPosed/LSPatch) | [GitHub](https://github.com/LSPosed/LSPatch/releases/tag/v0.6) | √ |
-| NPatch | 0.6.1(426) | 无 | [Telegram](https://t.me/NPatch/253) | × | 需要pr对应的jar文件 |
-| OPatch | 0.0.7 | 无 | FunBox's Telegram | × | 需要pr对应的jar文件 |
-| ONPatch | 0.0.7 | 无 | [Telegram](https://t.me/NPatch/286) | × | 需要pr对应的jar文件 |
+| LSPatch | 0.6 | [GitHub](https://github.com/LSPosed/LSPatch) | [GitHub](https://github.com/LSPosed/LSPatch/releases/) | √ |
+| JM_LSPatch | 0.7 | [GitHub](https://github.com/JingMatrix/LSPatch) | [GitHub](https://github.com/JingMatrix/LSPatch/releases) | √ |
+| NPatch | 0.7.4_521 | [GitHub](https://github.com/7723mod/NPatch) | [Telegram](https://t.me/NPatch) | √ |
 
 本仓库自动打包的项目
 | 软件名称 | 来源 | 版本 |
