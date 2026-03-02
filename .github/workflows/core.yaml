@@ -101,7 +101,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Download all APKs"
-        uses: "actions/download-artifact@v4"
+        uses: "actions/download-artifact@v8"
         with:
           path: "apks/"
           merge-multiple: true
@@ -120,15 +120,15 @@ jobs:
           管理器已展示在 readme.md 内，请自行下载对应的管理器
           EOF
       - name: "Tag Repo"
-        uses: richardsimko/update-tag@v1
+        uses: "richardsimko/update-tag@v1"
         with:
           tag_name: "CI-APKs"
-      - name: Upload Prerelease
-        uses: softprops/action-gh-release@v1
+      - name: "Upload Prerelease"
+        uses: "softprops/action-gh-release@v1"
         with:
-          tag_name: CI-APKs
+          tag_name: "CI-APKs"
           files: |
             apks/*
           prerelease: true
           generate_release_notes: true
-          body_path: release.txt
+          body_path: "release.txt"
