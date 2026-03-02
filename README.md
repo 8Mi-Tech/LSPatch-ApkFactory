@@ -15,12 +15,12 @@
 | NPatch | 0.7.4_521 | [GitHub](https://github.com/7723mod/NPatch) | [Telegram](https://t.me/NPatch) | √ |
 
 本仓库自动打包的项目
-| 软件名称 | 来源 | 版本 |
-| - | - | - |
-| 支付宝 | 豌豆荚 | latest |
-| 微信 | 豌豆荚 | latest |
-| Soul | 豌豆荚 | latest |
-| 抖音 | 豌豆荚 | latest |
-| 抖音极速版 | 豌豆荚 | latest |
-| QQ | 豌豆荚 | latest |
-| TikTok | ApkPure | latest |
+| 软件名称 | 别名 | 来源 | 版本 |
+| :-: | :-: | :-: | :-: |
+| 支付宝 | | 豌豆荚 | latest |
+| 微信 | WeChat | APKMirror | latest |
+| Soul | | 豌豆荚 | latest |
+| 抖音 | | 豌豆荚 | latest |
+| 抖音极速版 | DouyinLite | APKMirror | latest |
+| QQ | | APKMirror | latest |
+| TikTok | | ApkPure | latest |
