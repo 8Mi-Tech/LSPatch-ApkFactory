@@ -9,7 +9,7 @@
       }
     },
     {
-      "nickname": "微信",
+      "nickname": "WeChat",
       "type": "apkmirror",
       "data": {
         "org": "wechat",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "nickname": "抖音极速版",
+      "nickname": "DouyinLite",
       "type": "apkmirror",
       "data": {
         "org": "douyin",
