@@ -17,10 +17,10 @@
 本仓库自动打包的项目
 | 软件名称 | 别名 | 来源 | 版本 |
 | :-: | :-: | :-: | :-: |
-| 支付宝 | | 豌豆荚 | latest |
-| 微信 | WeChat | APKMirror | latest |
-| Soul | | 豌豆荚 | latest |
-| 抖音 | | 豌豆荚 | latest |
-| 抖音极速版 | DouyinLite | APKMirror | latest |
-| QQ | | APKMirror | latest |
+| 支付宝 | Alipay | vivo应用商店 | latest |
+| 微信 | WeChat | vivo应用商店 | latest |
+| Soul | | vivo应用商店 | latest |
+| 抖音 | Douyin | vivo应用商店 | latest |
+| 抖音极速版 | DouyinLite | vivo应用商店 | latest |
+| QQ | | vivo应用商店 | latest |
 | TikTok | | ApkPure | latest |
