@@ -23,8 +23,8 @@ jobs:
         run: |
           echo "matrix="`cat ${{ inputs.tasklist-filepath }} `"">> $GITHUB_OUTPUT
 
-  job_patch:
-    needs: job-init
+  job-patch:
+    needs: "job-init"
     runs-on: "ubuntu-latest"
     continue-on-error: true
     strategy:
@@ -42,7 +42,7 @@ jobs:
           distribution: "liberica"
       - name: "Download Apk (from APKMirror)"
         if: ${{ matrix.type == 'apkmirror' }}
-        uses: Kingsman44/gh-apkmirror-dl@v2.0
+        uses: "Kingsman44/gh-apkmirror-dl@v2.0"
         with:
           org: '${{ matrix.data.org }}'
           repo: '${{ matrix.data.repo }}'
@@ -94,4 +94,41 @@ jobs:
           make_lspatch_apk jm-lspatch
           make_lspatch_apk npatch
 
-          
+  job_release:
+    needs: "job-patch"
+    if: ${{ inputs.is-release }}
+    name: "Release All"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Download all APKs"
+        uses: "actions/download-artifact@v4"
+        with:
+          path: "apks/"
+          merge-multiple: true
+      - name: "List folder APKs files"
+        run: |
+          # 点击展开
+          ls -R apks
+      - name: "Delete old APKs"
+        uses: "8Mi-Tech/delete-release-assets-action@main"
+        with:
+          tag: "CI-APKs"
+          deleteOnlyFromDrafts: false
+      - run: |
+          cat > release.txt << EOF
+          该CI构建于 $(TZ=Asia/Shanghai date +"%Y.%m.%d %H:%M.%S")
+          管理器已展示在 readme.md 内，请自行下载对应的管理器
+          EOF
+      - name: "Tag Repo"
+        uses: richardsimko/update-tag@v1
+        with:
+          tag_name: "CI-APKs"
+      - name: Upload Prerelease
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: CI-APKs
+          files: |
+            apks/*
+          prerelease: true
+          generate_release_notes: true
+          body_path: release.txt
