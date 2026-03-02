@@ -1,51 +1,45 @@
 {
   "include": [
     {
-      "nickname": "支付宝",
-      "type": "apkmirror",
+      "nickname": "Alipay",
+      "type": "direct",
       "data": {
-        "org": "alipay-com",
-        "repo": "alipay"
+        "url": "https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=44428"
       }
     },
     {
       "nickname": "WeChat",
-      "type": "apkmirror",
+      "type": "direct",
       "data": {
-        "org": "wechat",
-        "repo": "wechat"
+        "url": "https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=40413"
       }
     },
     {
       "nickname": "Soul",
-      "type": "wandoujia",
+      "type": "direct",
       "data": {
-        "app_id_num": "7451210",
-        "history_id_num": ""
+        "url": "https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=1578290"
       }
     },
     {
-      "nickname": "抖音",
-      "type": "apkmirror",
+      "nickname": "Douyin",
+      "type": "direct",
       "data": {
-        "org": "douyin",
-        "repo": "douyin-抖音-記錄美好生活"
+        "url": "https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=1576137"
       }
     },
     {
       "nickname": "DouyinLite",
-      "type": "apkmirror",
+      "type": "direct",
       "data": {
-        "org": "douyin",
-        "repo": "douyin-speed-edition-抖音极速版"
+        "url": "https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=1576137"
       }
     },
     {
       "nickname": "QQ",
-      "type": "apkmirror",
+      "type": "direct",
       "data": {
-        "org": "tencent-technology-shenzhen-company-ltd",
-        "repo": "qq"
+        "url": "https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=40439"
       }
     },
     {
