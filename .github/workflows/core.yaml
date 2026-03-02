@@ -42,7 +42,7 @@ jobs:
           distribution: "liberica"
       - name: "Download Apk (from APKMirror)"
         if: ${{ matrix.type == 'apkmirror' }}
-        uses: Kingsman44/gh-apkmirror-dl@v2
+        uses: Kingsman44/gh-apkmirror-dl@v2.0
         with:
           org: '${{ matrix.data.org }}'
           repo: '${{ matrix.data.repo }}'
