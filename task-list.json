@@ -2,18 +2,18 @@
   "include": [
     {
       "nickname": "支付宝",
-      "type": "wandoujia",
+      "type": "apkmirror",
       "data": {
-        "app_id_num": "279979",
-        "history_id_num": ""
+        "org": "alipay-com",
+        "repo": "alipay"
       }
     },
     {
       "nickname": "微信",
-      "type": "wandoujia",
+      "type": "apkmirror",
       "data": {
-        "app_id_num": "596157",
-        "history_id_num": ""
+        "org": "wechat",
+        "repo": "wechat"
       }
     },
     {
@@ -26,26 +26,26 @@
     },
     {
       "nickname": "抖音",
-      "type": "wandoujia",
+      "type": "apkmirror",
       "data": {
-        "app_id_num": "7461948",
-        "history_id_num": ""
+        "org": "douyin",
+        "repo": "douyin-抖音-記錄美好生活"
       }
     },
     {
       "nickname": "抖音极速版",
-      "type": "wandoujia",
+      "type": "apkmirror",
       "data": {
-        "app_id_num": "8060330",
-        "history_id_num": ""
+        "org": "douyin",
+        "repo": "douyin-speed-edition-抖音极速版"
       }
     },
     {
       "nickname": "QQ",
-      "type": "wandoujia",
+      "type": "apkmirror",
       "data": {
-        "app_id_num": "566489",
-        "history_id_num": ""
+        "org": "tencent-technology-shenzhen-company-ltd",
+        "repo": "qq"
       }
     },
     {
