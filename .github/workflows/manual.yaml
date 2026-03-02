@@ -1,0 +1,17 @@
+name: Manual
+on:
+  workflow_dispatch:
+    inputs:
+      is-release:
+        description: '是否同步到 Release 页面'
+        required: false
+        type: boolean
+
+jobs:
+  build-manual:
+    secrets: inherit
+    name: Build Manual
+    uses: ./.github/workflows/core.yaml
+    with:
+        tasklist-filepath: "./task-list.json"
+        is-release: ${{ inputs.is-release }}
