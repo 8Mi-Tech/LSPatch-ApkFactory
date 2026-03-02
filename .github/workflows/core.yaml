@@ -65,17 +65,19 @@ jobs:
         with:
           apkPath: "temp.apk"
         #版本号：${{steps.apk-info.outputs.versionNum}}
-      - name: "Patch LSPatch Lib"
+      - name: "Install Artifact Handle"
+        uses: "lhotari/gh-actions-artifact-client@v2"
+      - name: "Patch LSPatch Lib to Apk (include fork)"
         run: |
           # 点我展开
           new_filename="${{ matrix.nickname }}-${{steps.apk-info.outputs.versionNum}}.apk"
           cp temp.apk $new_filename
-          java -jar ./lspatch.jar -v --manager -l 2 -o "output" $new_filename
-      - name: "Publish to Github Artifact"
-        uses: "actions/upload-artifact@v4"
-        with:
-          name: ${{ matrix.nickname }}-${{steps.apk-info.outputs.versionNum}}
-          path: output
-          retention-days: 1
+          make_lspatch_apk() {
+            java -jar ./$1.jar -v --manager -l 2 -o "$1" $new_filename
+            zip -q - "$1/$(ls $1)" | gh-actions-artifact-client.js upload "$(ls $1)"
+          }
+          make_lspatch_apk lspatch
+          make_lspatch_apk jm-lspatch
+          make_lspatch_apk npatch
 
           
