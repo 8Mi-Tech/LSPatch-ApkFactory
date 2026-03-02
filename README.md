@@ -9,10 +9,10 @@
 
 本仓库基于如下分支打包 请注意版本号不能低于这个表格内的
 | 分支 | 版本 | 仓库地址 | 发布地址 | 状态 | 原因 |
-| - | - | - | - | - | - |
-| LSPatch | 0.6 | [GitHub](https://github.com/LSPosed/LSPatch) | [GitHub](https://github.com/LSPosed/LSPatch/releases/) | √ |
-| JM_LSPatch | 0.7 | [GitHub](https://github.com/JingMatrix/LSPatch) | [GitHub](https://github.com/JingMatrix/LSPatch/releases) | √ |
-| NPatch | 0.7.4_521 | [GitHub](https://github.com/7723mod/NPatch) | [Telegram](https://t.me/NPatch) | √ |
+| - | - | - | - | :-: | - |
+| LSPatch | 0.6 | [GitHub](https://github.com/LSPosed/LSPatch) | [GitHub](https://github.com/LSPosed/LSPatch/releases/) | ✅ |
+| JM_LSPatch | 0.7 | [GitHub](https://github.com/JingMatrix/LSPatch) | [GitHub](https://github.com/JingMatrix/LSPatch/releases) | ✅ |
+| NPatch | 0.7.4_521 | [GitHub](https://github.com/7723mod/NPatch) | [Telegram](https://t.me/NPatch) | ❓ | 打包出来的东西跟没打包一样，在等待作者修复 |
 
 本仓库自动打包的项目
 | 软件名称 | 别名 | 来源 | 版本 |
