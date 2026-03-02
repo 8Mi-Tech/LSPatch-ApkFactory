@@ -85,7 +85,7 @@ jobs:
             java -jar $1.jar -v --manager -l 2 -o "$1" $new_filename.apk
             (
               cd $1
-              mv -v $(ls) $new_filename.$1.apk
+              mv -v $(ls) $new_filename-$1.apk
               zip -q - "$(ls)" | gh-actions-artifact-client.js upload "$(ls)"
             )
             echo "::endgroup::"
