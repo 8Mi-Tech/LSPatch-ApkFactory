@@ -73,9 +73,10 @@ jobs:
           new_filename="${{ matrix.nickname }}-${{steps.apk-info.outputs.versionNum}}.apk"
           cp temp.apk $new_filename
           make_lspatch_apk() {
-            # 点我展开 当前步骤为通过 $1 打包
+            echo "::group:: 点我展开 当前步骤为通过 $1 打包"
             java -jar ./$1.jar -v --manager -l 2 -o "$1" $new_filename
             zip -q - "$1/$(ls $1)" | gh-actions-artifact-client.js upload "$(ls $1)"
+            echo "::endgroup::"
           }
           make_lspatch_apk lspatch
           make_lspatch_apk jm-lspatch
