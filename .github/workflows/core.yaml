@@ -70,12 +70,16 @@ jobs:
       - name: "Patch LSPatch Lib to Apk (include fork)"
         run: |
           # 点我展开
-          new_filename="${{ matrix.nickname }}-${{steps.apk-info.outputs.versionNum}}.apk"
-          cp temp.apk $new_filename
+          new_filename="${{ matrix.nickname }}-${{steps.apk-info.outputs.versionNum}}"
+          cp temp.apk $new_filename.apk
           make_lspatch_apk() {
             echo "::group:: 点我展开 当前步骤为通过 $1 打包"
-            java -jar ./$1.jar -v --manager -l 2 -o "$1" $new_filename
-            zip -q - "$1/$(ls $1)" | gh-actions-artifact-client.js upload "$(ls $1)"
+            java -jar $1.jar -v --manager -l 2 -o "$1" $new_filename.apk
+            (
+              cd $1
+              mv -v $(ls) $new_filename.$1.apk
+              zip -q - "$(ls)" | gh-actions-artifact-client.js upload "$(ls)"
+            )
             echo "::endgroup::"
           }
           make_lspatch_apk lspatch
