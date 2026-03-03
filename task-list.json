@@ -56,6 +56,14 @@
         "value": "com.zhiliaoapp.musically",
         "version": "latest"
       }
+    },
+    {
+      "nickname": "RedNote",
+      "type": "direct",
+      "data": {
+        "name": "vivo",
+        "value": "61278"
+      }
     }
   ]
 }
