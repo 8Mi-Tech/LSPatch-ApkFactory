@@ -120,7 +120,7 @@ jobs:
             echo "✅ Successfully added $NICKNAME to task-list.json"
           fi
 
-          echo "| $NAME | $NICKNAME | $SOURCE_NAME | latest |" >> README.md
+          echo "| $APP_NAME | $NICKNAME | $SOURCE_NAME | latest |" >> README.md
 
       - name: "Push"
         run: |
