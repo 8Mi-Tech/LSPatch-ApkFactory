@@ -6,6 +6,12 @@
 例如 `Alipay-10.8.30.8000-lspatch.apk` 对应的加载器是 `LSPatch`<br>
 在此希望 LSPatch能恢复更新，且大一统，且多选项，且最新，（我可不想一个应用包得服务多个分支）
 
+> [!TIP]
+> 自助餐食用方法 <br>
+1.(可选) 如果没有在这找到你想要的应用 [填写表单提交](https://github.com/8Mi-Tech/LSPatch-ApkFactory/issues/new?template=add-app.yaml) <br>
+2.[进入](https://github.com/8Mi-Tech/LSPatch-ApkFactory/actions/workflows/manual.yaml)并点击 `Run Workflow` 且勾选 `Release` <br>
+3.稍等片刻可在[此处](https://github.com/8Mi-Tech/LSPatch-ApkFactory/releases/tag/CI-APKs)获取
+
 本仓库基于如下分支打包 请注意版本号不能低于这个表格内的
 | 分支 | 版本 | 仓库地址 | 发布地址 | 状态 | 原因 |
 | - | - | - | - | :-: | - |
