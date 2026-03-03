@@ -66,7 +66,13 @@ jobs:
         if: ${{ matrix.type == 'direct' }}
         run: |
           # 点我展开
-          aria2c --out "temp.apk" ${{matrix.data.url}}
+          echo "文件来源 ${{ matrix.data.name }}"
+          case "${{ matrix.data.name }}" in
+            vivo) dl_url="https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=${{ matrix.data.value }}"
+            apkpure) dl_url="https://d.apkpure.com/b/APK/${{ matrix.data.value }}?version=${{ matrix.data.version }}"
+            *) dl_url="${{ matrix.data.value }}"
+          esac
+          aria2c --out "temp.apk" $dl_url
       - name: "Get Apk Info"
         id: "apk-info"
         uses: "8Mi-Tech/get-apk-info-action@master"
