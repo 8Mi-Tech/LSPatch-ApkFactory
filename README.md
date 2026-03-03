@@ -7,10 +7,10 @@
 在此希望 LSPatch能恢复更新，且大一统，且多选项，且最新，（我可不想一个应用包得服务多个分支）
 
 > [!TIP]
-> 自助餐食用方法 <br>
-1.(可选) 如果没有在这找到你想要的应用 [填写表单提交](https://github.com/8Mi-Tech/LSPatch-ApkFactory/issues/new?template=add-app.yaml) <br>
-2.[进入](https://github.com/8Mi-Tech/LSPatch-ApkFactory/actions/workflows/manual.yaml)并点击 `Run Workflow` 且勾选 `Release` <br>
-3.稍等片刻可在[此处](https://github.com/8Mi-Tech/LSPatch-ApkFactory/releases/tag/CI-APKs)获取
+> 自助餐三步食用法 <br>
+ 点菜:(可选) 如果没有在这找到你想要的应用 [填写表单提交](https://github.com/8Mi-Tech/LSPatch-ApkFactory/issues/new?template=add-app.yaml) <br>
+ 做菜: [进入](https://github.com/8Mi-Tech/LSPatch-ApkFactory/actions/workflows/manual.yaml)并点击 `Run Workflow` 且勾选 `Release` <br>
+ 上菜: 稍等片刻可在[此处](https://github.com/8Mi-Tech/LSPatch-ApkFactory/releases/tag/CI-APKs)获取
 
 > [!WARNING]  
 > APK问题或模块问题，请优先找管理器作者反馈，在这里反馈没有作用 <br>
