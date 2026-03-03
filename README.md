@@ -18,7 +18,7 @@
 
 本仓库基于如下分支打包 请注意版本号不能低于这个表格内的
 | 分支 | 版本 | 仓库地址 | 发布地址 | 状态 | 原因 |
-| - | - | - | - | :-: | - |
+| :-: | :-: | - | - | :-: | - |
 | LSPatch | 0.6 | [GitHub](https://github.com/LSPosed/LSPatch) | [GitHub](https://github.com/LSPosed/LSPatch/releases/) | ✅ |
 | JM_LSPatch | 0.7 | [GitHub](https://github.com/JingMatrix/LSPatch) | [GitHub](https://github.com/JingMatrix/LSPatch/releases) | ✅ |
 | NPatch | 0.7.4_521 | [GitHub](https://github.com/7723mod/NPatch) | [Telegram](https://t.me/NPatch) | ❓ | 产物有些许问题,正在修复中 |
@@ -28,11 +28,11 @@
 | :-: | :-: | :-: | :-: |
 | 支付宝 | Alipay | vivo应用商店 | latest |
 | 微信 | WeChat | vivo应用商店 | latest |
-| Soul | | vivo应用商店 | latest |
+| Soul | Soul | vivo应用商店 | latest |
 | 抖音 | Douyin | vivo应用商店 | latest |
 | 抖音极速版 | DouyinLite | vivo应用商店 | latest |
-| QQ | | vivo应用商店 | latest |
+| QQ | QQ | vivo应用商店 | latest |
 | 小红书 | RedNote | vivo应用商店 | latest |
 | 快手 | KwaiShou | vivo应用商店 | latest |
-| TikTok | | ApkPure | latest |
-|  | CamScanner | vivo应用商店 | latest |
+| TikTok | TikTok | ApkPure | latest |
+| 扫描全能王 | CamScanner | vivo应用商店 | latest |
