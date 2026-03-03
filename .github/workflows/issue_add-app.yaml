@@ -1,0 +1,139 @@
+name: 应用申请自动化处理
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  # 任务 1：静默验证表单逻辑
+  verify_form:
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.labels.*.name, 'app-submission')
+    steps:
+      - name: Init Issue
+        id: issue-parser
+        uses: stefanbuck/github-issue-parser@v3
+        with:
+          template-path: .github/ISSUE_TEMPLATE/add-app.yml
+
+      - name: Check Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const parsedData = JSON.parse(`${{ steps.issue-parser.outputs.jsonString }}`);
+            const source = parsedData.source;
+            const value = (parsedData.value || "").trim();
+            
+            let errors = [];
+            if (source === 'vivo' && !/^\d+$/.test(value)) {
+                errors.push("vivo 来源的额外参数 填写数字");
+            } else if (source === 'url' && !value.startsWith('https://')) {
+                errors.push("url 来源的额外参数 以 https:// 开头");
+            }
+
+            if (errors.length > 0) {
+                // 只有报错时才说话，引导用户修改
+                const msg = `⚠️ 表单格式错误，请修正后重新提交：\n- ${errors.join('\n- ')}`;
+                await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: context.issue.number,
+                    body: msg
+                });
+                core.setFailed("Form validation failed");
+            }
+
+      # --- 这里放置你原有的 APK 分析步骤 ---
+      - name: "Download APK"
+        run: |
+          # 点我展开
+          echo "文件来源 ${{ matrix.data.name }}"
+          case "${{ matrix.data.name }}" in
+            vivo) dl_url="https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=${{ matrix.data.value }}"
+            apkpure) dl_url="https://d.apkpure.com/b/APK/${{ matrix.data.value }}?version=${{ matrix.data.version }}"
+            *) dl_url="${{ matrix.data.value }}"
+          esac
+          aria2c --out "temp.apk" $dl_url
+      - name: "Get APK Info"
+        id: "apk-info"
+        uses: "8Mi-Tech/get-apk-info-action@master"
+        with:
+          apkPath: "temp.apk"
+      - name: "Check APK"
+        run: |
+          # 点我展开
+          if [ "${{ steps.issue-parser.outputs.package_id }}" = "${{ steps.apk-info.outputs.applicationId }}" ]; then
+            echo "验证通过：包名匹配"
+            exit 0
+          else
+            echo "验证失败：表单包名 (${{ steps.issue-parser.outputs.package_id }}) 与 APK 实际包名 (${{ steps.apk-info.outputs.applicationId }}) 不符"
+            exit 1
+          fi
+      - name: Init Git
+        uses: actions/checkout@v4
+      - name: Write to Task List
+        run: |
+          NICKNAME="${{ steps.issue-parser.outputs.nickname }}"
+          SOURCE="${{ steps.issue-parser.outputs.source }}"
+          VALUE="${{ steps.issue-parser.outputs.value }}"
+
+          case "$SOURCE" in
+            "vivo")
+              echo "Processing vivo app..."
+              JSON_OBJ=$(jq -n \
+                --arg n "$NICKNAME" \
+                --arg v "$VALUE" \
+                '{nickname: $n, type: "direct", data: {name: "vivo", value: $v}}')
+              ;;
+            "apkpure")
+              echo "Processing apkpure app..."
+              JSON_OBJ=$(jq -n \
+                --arg n "$NICKNAME" \
+                --arg v "$VALUE" \
+                '{nickname: $n, type: "direct", data: {name: "apkpure", value: $v, version: "latest"}}')
+              ;;
+            "url")
+              echo "Processing url direct link..."
+              # 假设你的 URL 格式也有特定 JSON 结构
+              JSON_OBJ=$(jq -n \
+                --arg n "$NICKNAME" \
+                --arg v "$VALUE" \
+                '{nickname: $n, type: "direct", data: {name: "url", link: $v}}')
+              ;;
+            *)
+              echo "Unknown source: $SOURCE"
+              exit 1
+              ;;
+          esac
+
+          if [ ! -z "$JSON_OBJ" ]; then
+            jq ". += [$JSON_OBJ]" task-list.json > temp.json && mv temp.json task-list.json
+            echo "✅ Successfully added $NICKNAME to task-list.json"
+          fi
+
+      - name: 提交并推送更改
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add task-list.json
+          git commit -m "auto: 添加新应用 $NICKNAME (via Issue #${{ github.event.issue.number }})"
+          git push
+
+      # --- 只有全部通过后，才发送最终回复 ---
+      - name: 最终通过回复
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: "🎉 **验证通过！** 应用已成功识别并加入处理队列。"
+            });
+            // 可选：验证通过后自动打上 'verified' 标签
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['verified']
+            });
