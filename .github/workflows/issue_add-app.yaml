@@ -1,4 +1,7 @@
-name: 应用申请自动化处理
+name: Issue Add APK Check
+permissions:
+  issues: write
+  contents: write
 on:
   issues:
     types: [opened, edited]
