@@ -28,4 +28,6 @@
 | 抖音 | Douyin | vivo应用商店 | latest |
 | 抖音极速版 | DouyinLite | vivo应用商店 | latest |
 | QQ | | vivo应用商店 | latest |
+| 小红书 | RedNote | vivo应用商店 | latest |
+| 快手 | KwaiShou | vivo应用商店 | latest |
 | TikTok | | ApkPure | latest |
