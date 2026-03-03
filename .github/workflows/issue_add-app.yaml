@@ -51,11 +51,14 @@ jobs:
       - name: "Download APK"
         run: |
           # 点我展开
-          echo "文件来源 ${{ matrix.data.name }}"
-          case "${{ matrix.data.name }}" in
-            vivo) dl_url="https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=${{ matrix.data.value }}"
-            apkpure) dl_url="https://d.apkpure.com/b/APK/${{ matrix.data.value }}?version=${{ matrix.data.version }}"
-            *) dl_url="${{ matrix.data.value }}"
+          SOURCE="${{ steps.issue-parser.outputs.source }}"
+          VALUE="${{ steps.issue-parser.outputs.value }}"
+          
+          echo "文件来源 $SOURCE"
+          case "$SOURCE" in
+            vivo) dl_url="https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=$VALUE" ;;
+            apkpure) dl_url="https://d.apkpure.com/b/APK/$VALUE?version=latest" ;;
+            *) dl_url="$VALUE" ;;
           esac
           aria2c --out "temp.apk" $dl_url
       - name: "Get APK Info"
