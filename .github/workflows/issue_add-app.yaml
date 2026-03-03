@@ -69,11 +69,13 @@ jobs:
       - name: "Check APK"
         run: |
           # 点我展开
-          if [ "${{ steps.issue-parser.outputs.package_id }}" = "${{ steps.apk-info.outputs.applicationId }}" ]; then
+          ISSUE="${{ steps.issue-parser.outputs.issueparser_package_id }}"
+          FILE="${{ steps.apk-info.outputs.applicationId }}"
+          if [ "$ISSUE" = "$FILE" ]; then
             echo "验证通过：包名匹配"
             exit 0
           else
-            echo "验证失败：表单包名 (${{ steps.issue-parser.outputs.package_id }}) 与 APK 实际包名 (${{ steps.apk-info.outputs.applicationId }}) 不符"
+            echo "验证失败：表单包名 ($ISSUE) 与 APK 实际包名 ($FILE) 不符"
             exit 1
           fi
       - name: "Write to Task List"
@@ -120,6 +122,7 @@ jobs:
       - name: "Push"
         run: |
           # 点我展开
+          NICKNAME="${{ steps.issue-parser.outputs.issueparser_nickname }}"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add task-list.json
