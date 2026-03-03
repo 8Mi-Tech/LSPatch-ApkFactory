@@ -111,7 +111,7 @@ jobs:
           esac
 
           if [ ! -z "$JSON_OBJ" ]; then
-            jq --argjson newitem "$JSON_OBJ" '.include += [$newitem]' task-list.json > temp.json && mv temp.json task-list.json
+            jq --argjson newitem "$JSON_OBJ" '.include += [$newitem]' task-list.json > temp.json
             mv temp.json task-list.json
             echo "✅ Successfully added $NICKNAME to task-list.json"
           fi
