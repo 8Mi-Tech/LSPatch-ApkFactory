@@ -9,7 +9,7 @@ body:
       label: 程序别名
       placeholder: ExampleApp
       description: |
-        主要填写程序的英文名
+        主要填写程序的英文名 <br>
         例如 支付宝 填写 Alipay
     validations:
       required: true
@@ -35,8 +35,8 @@ body:
     attributes:
       label: 来源附加参数
       description: |
-        vivo 填写 appid
-        apkpure 填写 package_id
+        vivo 填写 appid <br>
+        apkpure 填写 package_id <br>
         url 填写 https开头的链接
     validations:
       required: true
