@@ -5,6 +5,13 @@ labels: ["app-submission"]
 assignees: ["github-actions[bot]"]
 body:
   - type: input
+    id: app_name
+    attributes:
+      label: 程序名
+      placeholder: 样例应用
+      description: |
+        例如 支付宝 填写 支付宝
+  - type: input
     id: nickname
     attributes:
       label: 程序别名
