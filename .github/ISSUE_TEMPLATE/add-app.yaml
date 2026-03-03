@@ -2,6 +2,7 @@ name: 添加应用
 description: 提交新应用申请
 title: "[添加应用]: "
 labels: ["app-submission"]
+assignees: ["github-actions[bot]"]
 body:
   - type: input
     id: nickname
@@ -16,7 +17,7 @@ body:
   - type: input
     id: package_id
     attributes:
-      label: 应用包名 (Package ID)
+      label: 应用包名
       placeholder: com.example.app
     validations:
       required: true
@@ -35,8 +36,8 @@ body:
     attributes:
       label: 来源附加参数
       description: |
-        vivo 填写 appid <br>
-        apkpure 填写 package_id <br>
+        vivo 填写 app_id (纯数字) <br>
+        apkpure 填写 应用包名 (与上边的一致) <br>
         url 填写 https开头的链接
     validations:
       required: true
