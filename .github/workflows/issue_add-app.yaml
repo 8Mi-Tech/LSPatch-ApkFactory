@@ -76,8 +76,9 @@ jobs:
             echo "验证失败：表单包名 (${{ steps.issue-parser.outputs.package_id }}) 与 APK 实际包名 (${{ steps.apk-info.outputs.applicationId }}) 不符"
             exit 1
           fi
-      - name: Write to Task List
+      - name: "Write to Task List"
         run: |
+          # 点我展开
           NICKNAME="${{ steps.issue-parser.outputs.issueparser_nickname }}"
           SOURCE="${{ steps.issue-parser.outputs.issueparser_source }}"
           VALUE="${{ steps.issue-parser.outputs.issueparser_value }}"
@@ -116,8 +117,9 @@ jobs:
             echo "✅ Successfully added $NICKNAME to task-list.json"
           fi
 
-      - name: Push
+      - name: "Push"
         run: |
+          # 点我展开
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add task-list.json
@@ -125,9 +127,9 @@ jobs:
           git push
 
       # --- 只有全部通过后，才发送最终回复 ---
-      - name: Success Reply
+      - name: "Success Reply"
         if: success()
-        uses: actions/github-script@v7
+        uses: "actions/github-script@v7"
         with:
           script: |
             // 发表成功评论
@@ -146,9 +148,9 @@ jobs:
               state: 'closed',
               state_reason: 'completed'
             });
-      - name: Failure Reply
+      - name: "Failure Reply"
         if: failure()
-        uses: actions/github-script@v7
+        uses: "actions/github-script@v7"
         with:
           script: |
             // 1. 发表失败评论
