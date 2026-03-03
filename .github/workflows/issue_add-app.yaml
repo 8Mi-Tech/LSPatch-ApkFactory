@@ -16,7 +16,7 @@ jobs:
         id: issue-parser
         uses: stefanbuck/github-issue-parser@v3
         with:
-          template-path: .github/ISSUE_TEMPLATE/add-app.yml
+          template-path: .github/ISSUE_TEMPLATE/add-app.yaml
 
       - name: Check Issue
         uses: actions/github-script@v7
