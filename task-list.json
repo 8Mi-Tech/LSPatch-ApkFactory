@@ -4,49 +4,57 @@
       "nickname": "Alipay",
       "type": "direct",
       "data": {
-        "url": "https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=44428"
+        "name": "vivo",
+        "value": "44428"
       }
     },
     {
       "nickname": "WeChat",
       "type": "direct",
       "data": {
-        "url": "https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=40413"
+        "name": "vivo",
+        "value": "40413"
       }
     },
     {
       "nickname": "Soul",
       "type": "direct",
       "data": {
-        "url": "https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=1578290"
+        "name": "vivo",
+        "value": "1578290"
       }
     },
     {
       "nickname": "Douyin",
       "type": "direct",
       "data": {
-        "url": "https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=1576137"
+        "name": "vivo",
+        "value": "1576137"
       }
     },
     {
       "nickname": "DouyinLite",
       "type": "direct",
       "data": {
-        "url": "https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=1576137"
+        "name": "vivo",
+        "value": "1576137"
       }
     },
     {
       "nickname": "QQ",
       "type": "direct",
       "data": {
-        "url": "https://appstore.vivo.com.cn/appinfo/downloadApkFile-h5appstore?id=40439"
+        "name": "vivo",
+        "value": "40439"
       }
     },
     {
       "nickname": "TikTok",
       "type": "direct",
       "data": {
-        "url": "https://d.apkpure.com/b/APK/com.zhiliaoapp.musically?version=latest"
+        "name": "apkpure",
+        "value": "com.zhiliaoapp.musically",
+        "version": "latest"
       }
     }
   ]
