@@ -87,35 +87,22 @@ jobs:
 
           case "$SOURCE" in
             "vivo")
-              echo "Processing vivo app..."
-              JSON_OBJ=$(jq -n \
-                --arg n "$NICKNAME" \
-                --arg v "$VALUE" \
-                '{nickname: $n, type: "direct", data: {name: "vivo", value: $v}}')
+              JSON_OBJ=$(jq -n --arg n "$NICKNAME" --arg v "$VALUE" '{nickname: $n, type: "direct", data: {name: "vivo", value: $v}}')
               ;;
             "apkpure")
-              echo "Processing apkpure app..."
-              JSON_OBJ=$(jq -n \
-                --arg n "$NICKNAME" \
-                --arg v "$VALUE" \
-                '{nickname: $n, type: "direct", data: {name: "apkpure", value: $v, version: "latest"}}')
+              JSON_OBJ=$(jq -n --arg n "$NICKNAME" --arg v "$VALUE" '{nickname: $n, type: "direct", data: {name: "apkpure", value: $v, version: "latest"}}')
               ;;
             "url")
-              echo "Processing url direct link..."
-              # 假设你的 URL 格式也有特定 JSON 结构
-              JSON_OBJ=$(jq -n \
-                --arg n "$NICKNAME" \
-                --arg v "$VALUE" \
-                '{nickname: $n, type: "direct", data: {name: "url", link: $v}}')
+              JSON_OBJ=$(jq -n --arg n "$NICKNAME" --arg v "$VALUE" '{nickname: $n, type: "direct", data: {name: "url", link: $v}}')
               ;;
             *)
-              echo "Unknown source: $SOURCE"
-              exit 1
+              echo "Unknown source: $SOURCE"; exit 1
               ;;
           esac
 
           if [ ! -z "$JSON_OBJ" ]; then
-            jq ". += [$JSON_OBJ]" task-list.json > temp.json && mv temp.json task-list.json
+            jq ". += [$JSON_OBJ]" task-list.json > temp.json
+            mv temp.json task-list.json
             echo "✅ Successfully added $NICKNAME to task-list.json"
           fi
 
