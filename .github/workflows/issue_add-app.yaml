@@ -125,12 +125,12 @@ jobs:
       - name: "Push"
         run: |
           # 点我展开
-          NICKNAME="${{ steps.issue-parser.outputs.issueparser_nickname }}"
+          APP_NAME="${{ steps.issue-parser.outputs.issueparser_app_name }}"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add task-list.json
           git add README.md
-          git commit -m "auto: 添加新应用 $NICKNAME (via Issue #${{ github.event.issue.number }})"
+          git commit -m "auto: 添加新应用 $APP_NAME (via Issue #${{ github.event.issue.number }})"
           git push
 
       # --- 只有全部通过后，才发送最终回复 ---
