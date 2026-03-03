@@ -12,12 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.event.issue.labels.*.name, 'app-submission')
     steps:
+      - name: Init Git
+        uses: actions/checkout@v4
+
       - name: Init Issue
         id: issue-parser
         uses: stefanbuck/github-issue-parser@v3
         with:
           template-path: .github/ISSUE_TEMPLATE/add-app.yaml
-
       - name: Check Issue
         uses: actions/github-script@v7
         with:
@@ -71,8 +73,6 @@ jobs:
             echo "验证失败：表单包名 (${{ steps.issue-parser.outputs.package_id }}) 与 APK 实际包名 (${{ steps.apk-info.outputs.applicationId }}) 不符"
             exit 1
           fi
-      - name: Init Git
-        uses: actions/checkout@v4
       - name: Write to Task List
         run: |
           NICKNAME="${{ steps.issue-parser.outputs.nickname }}"
