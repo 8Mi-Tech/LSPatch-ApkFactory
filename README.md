@@ -35,3 +35,4 @@
 | 小红书 | RedNote | vivo应用商店 | latest |
 | 快手 | KwaiShou | vivo应用商店 | latest |
 | TikTok | | ApkPure | latest |
+|  | CamScanner | vivo应用商店 | latest |

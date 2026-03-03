@@ -72,6 +72,14 @@
         "name": "vivo",
         "value": "50615"
       }
+    },
+    {
+      "nickname": "CamScanner",
+      "type": "direct",
+      "data": {
+        "name": "vivo",
+        "value": "48524"
+      }
     }
   ]
 }
