@@ -7,8 +7,8 @@ on:
     types: [opened, edited]
 
 jobs:
-  # 任务 1：静默验证表单逻辑
-  verify_form:
+  verify:
+    name: "执行验证流程并推送"
     runs-on: "ubuntu-latest"
     if: contains(github.event.issue.labels.*.name, 'app-submission')
     steps:
