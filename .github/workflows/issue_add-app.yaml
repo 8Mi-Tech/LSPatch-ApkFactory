@@ -91,6 +91,7 @@ jobs:
       - name: "Write to Task List"
         run: |
           # 点我展开
+          APP_NAME="${{ steps.issue-parser.outputs.issueparser_app_name }}"
           NICKNAME="${{ steps.issue-parser.outputs.issueparser_nickname }}"
           SOURCE="${{ steps.issue-parser.outputs.issueparser_source }}"
           VALUE="${{ steps.issue-parser.outputs.issueparser_value }}"
@@ -98,12 +99,15 @@ jobs:
           case "$SOURCE" in
             "vivo")
               JSON_OBJ=$(jq -n --arg n "$NICKNAME" --arg v "$VALUE" '{nickname: $n, type: "direct", data: {name: "vivo", value: $v}}')
+              SOURCE_NAME="vivo应用商店"
               ;;
             "apkpure")
               JSON_OBJ=$(jq -n --arg n "$NICKNAME" --arg v "$VALUE" '{nickname: $n, type: "direct", data: {name: "apkpure", value: $v, version: "latest"}}')
+              SOURCE_NAME="APKPure"
               ;;
             "url")
               JSON_OBJ=$(jq -n --arg n "$NICKNAME" --arg v "$VALUE" '{nickname: $n, type: "direct", data: {name: "url", link: $v}}')
+              SOURCE_NAME="N/A"
               ;;
             *)
               echo "Unknown source: $SOURCE"; exit 1
@@ -116,6 +120,8 @@ jobs:
             echo "✅ Successfully added $NICKNAME to task-list.json"
           fi
 
+          echo "| $NAME | $NICKNAME | $SOURCE_NAME | latest |" >> README.md
+
       - name: "Push"
         run: |
           # 点我展开
@@ -123,6 +129,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add task-list.json
+          git add README.md
           git commit -m "auto: 添加新应用 $NICKNAME (via Issue #${{ github.event.issue.number }})"
           git push
 
