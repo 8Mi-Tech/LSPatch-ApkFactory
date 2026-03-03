@@ -36,3 +36,4 @@
 | 快手 | KwaiShou | vivo应用商店 | latest |
 | TikTok | TikTok | ApkPure | latest |
 | 扫描全能王 | CamScanner | vivo应用商店 | latest |
+| 哔哩哔哩 | Bilibili | vivo应用商店 | latest |

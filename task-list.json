@@ -80,6 +80,14 @@
         "name": "vivo",
         "value": "48524"
       }
+    },
+    {
+      "nickname": "Bilibili",
+      "type": "direct",
+      "data": {
+        "name": "vivo",
+        "value": "48666"
+      }
     }
   ]
 }
