@@ -88,6 +88,15 @@
         "name": "vivo",
         "value": "48666"
       }
+    },
+    {
+      "nickname": "YouTube",
+      "type": "direct",
+      "data": {
+        "name": "apkpure",
+        "value": "com.google.android.youtube",
+        "version": "latest"
+      }
     }
   ]
 }
