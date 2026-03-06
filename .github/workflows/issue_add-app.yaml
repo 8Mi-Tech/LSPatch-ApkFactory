@@ -98,15 +98,15 @@ jobs:
 
           case "$SOURCE" in
             "vivo")
-              JSON_OBJ=$(jq -n --arg n "$NICKNAME" --arg v "$VALUE" '{nickname: $n, type: "direct", data: {name: "vivo", value: $v}}')
+              JSON_OBJ=$(jq -n --arg n "$NICKNAME" --arg v "$VALUE" '{nickname: $n, type: "direct", data: {source: "vivo", value: $v}}')
               SOURCE_NAME="vivo应用商店"
               ;;
             "apkpure")
-              JSON_OBJ=$(jq -n --arg n "$NICKNAME" --arg v "$VALUE" '{nickname: $n, type: "direct", data: {name: "apkpure", value: $v, version: "latest"}}')
+              JSON_OBJ=$(jq -n --arg n "$NICKNAME" --arg v "$VALUE" '{nickname: $n, type: "direct", data: {source: "apkpure", value: $v, version: "latest"}}')
               SOURCE_NAME="APKPure"
               ;;
             "url")
-              JSON_OBJ=$(jq -n --arg n "$NICKNAME" --arg v "$VALUE" '{nickname: $n, type: "direct", data: {name: "url", link: $v}}')
+              JSON_OBJ=$(jq -n --arg n "$NICKNAME" --arg v "$VALUE" '{nickname: $n, type: "direct", data: {source: "url", link: $v}}')
               SOURCE_NAME="N/A"
               ;;
             *)

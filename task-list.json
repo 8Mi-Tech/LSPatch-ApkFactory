@@ -4,7 +4,7 @@
       "nickname": "Alipay",
       "type": "direct",
       "data": {
-        "name": "vivo",
+        "source": "vivo",
         "value": "44428"
       }
     },
@@ -12,7 +12,7 @@
       "nickname": "WeChat",
       "type": "direct",
       "data": {
-        "name": "vivo",
+        "source": "vivo",
         "value": "40413"
       }
     },
@@ -20,7 +20,7 @@
       "nickname": "Soul",
       "type": "direct",
       "data": {
-        "name": "vivo",
+        "source": "vivo",
         "value": "1578290"
       }
     },
@@ -28,7 +28,7 @@
       "nickname": "Douyin",
       "type": "direct",
       "data": {
-        "name": "vivo",
+        "source": "vivo",
         "value": "1576137"
       }
     },
@@ -36,7 +36,7 @@
       "nickname": "DouyinLite",
       "type": "direct",
       "data": {
-        "name": "vivo",
+        "source": "vivo",
         "value": "1576137"
       }
     },
@@ -44,7 +44,7 @@
       "nickname": "QQ",
       "type": "direct",
       "data": {
-        "name": "vivo",
+        "source": "vivo",
         "value": "40439"
       }
     },
@@ -52,7 +52,7 @@
       "nickname": "TikTok",
       "type": "direct",
       "data": {
-        "name": "apkpure",
+        "source": "apkpure",
         "value": "com.zhiliaoapp.musically",
         "version": "latest"
       }
@@ -61,7 +61,7 @@
       "nickname": "RedNote",
       "type": "direct",
       "data": {
-        "name": "vivo",
+        "source": "vivo",
         "value": "61278"
       }
     },
@@ -69,7 +69,7 @@
       "nickname": "KwaiShou",
       "type": "direct",
       "data": {
-        "name": "vivo",
+        "source": "vivo",
         "value": "50615"
       }
     },
@@ -77,7 +77,7 @@
       "nickname": "CamScanner",
       "type": "direct",
       "data": {
-        "name": "vivo",
+        "source": "vivo",
         "value": "48524"
       }
     },
@@ -85,7 +85,7 @@
       "nickname": "Bilibili",
       "type": "direct",
       "data": {
-        "name": "vivo",
+        "source": "vivo",
         "value": "48666"
       }
     },
@@ -93,7 +93,7 @@
       "nickname": "YouTube",
       "type": "direct",
       "data": {
-        "name": "apkpure",
+        "source": "apkpure",
         "value": "com.google.android.youtube",
         "version": "latest"
       }
