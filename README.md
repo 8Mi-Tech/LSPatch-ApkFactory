@@ -12,9 +12,14 @@
  做菜: [进入](https://github.com/8Mi-Tech/LSPatch-ApkFactory/actions/workflows/manual.yaml)并点击 `Run Workflow` 且勾选 `Release` <br>
  上菜: 稍等片刻可在[此处](https://github.com/8Mi-Tech/LSPatch-ApkFactory/releases/tag/CI-APKs)获取
 
-> [!WARNING]  
+> [!WARNING]
 > APK问题或模块问题，请优先找管理器作者反馈，在这里反馈没有作用 <br>
 例:  `Alipay-10.8.30.8000-npatch.apk` ， 安装后若使用过程遇到在原版程序内没有出现的问题或模块问题，请向 `NPatch` 作者反馈
+
+> [!IMPORTANT]
+> 现已开放 `Template`<br>
+ 若只需做自己的分支, 请使用 `Use this Template` -> `Create a new repository`<br>
+ 若是帮本仓库做得更好, 请使用 `Fork`
 
 本仓库基于如下分支打包 请注意版本号不能低于这个表格内的
 | 分支 | 版本 | 仓库地址 | 发布地址 | 状态 | 原因 |
