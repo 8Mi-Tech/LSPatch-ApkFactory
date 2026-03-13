@@ -18,7 +18,7 @@ jobs:
       result: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v6"
       - id: "set-matrix"
         run: |
           echo "matrix="`cat ${{ inputs.tasklist-filepath }} `"">> $GITHUB_OUTPUT
@@ -32,9 +32,9 @@ jobs:
     name: "App Repackage / ${{ matrix.nickname }}"
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v6"
       - name: "Setup JDK"
-        uses: "actions/setup-java@v4"
+        uses: "actions/setup-java@v5"
         with:
           java-version: "21"
           #cache: "gradle"
@@ -80,7 +80,7 @@ jobs:
           apkPath: "temp.apk"
         #版本号：${{ steps.apk-info.outputs.versionNum }}
       - name: "Install Artifact Handle"
-        uses: "lhotari/gh-actions-artifact-client@v2"
+        uses: "8Mi-Tech/gh-actions-artifact-client@master"
       - name: "Patch LSPatch Lib to Apk (include fork)"
         run: |
           # 点我展开

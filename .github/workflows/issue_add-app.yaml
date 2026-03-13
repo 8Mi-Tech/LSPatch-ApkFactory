@@ -13,7 +13,7 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'app-submission')
     steps:
       - name: "Init Git"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v6"
 
       - name: "Init Issue"
         id: "issue-parser"
