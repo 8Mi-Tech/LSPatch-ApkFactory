@@ -25,7 +25,7 @@
 | 分支 | 版本 | 仓库地址 | 发布地址 | 状态 | 原因 |
 | :-: | :-: | - | - | :-: | - |
 | LSPatch | 0.6 | [GitHub](https://github.com/LSPosed/LSPatch) | [GitHub](https://github.com/LSPosed/LSPatch/releases/) | ✅ |
-| JM_LSPatch | 0.7 | [GitHub](https://github.com/JingMatrix/LSPatch) | [GitHub](https://github.com/JingMatrix/LSPatch/releases) | ✅ |
+| JM_LSPatch | 0.8-440 | [GitHub](https://github.com/JingMatrix/LSPatch) | [GitHub](https://github.com/JingMatrix/LSPatch/releases) | ✅ |
 | NPatch | 0.7.4-532 | [GitHub](https://github.com/7723mod/NPatch) | [Telegram](https://t.me/NPatch) | ❓ | 产物有些许问题,正在修复中 |
 
 本仓库自动打包的项目
