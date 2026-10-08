@@ -95,6 +95,14 @@
         "org": "google-inc",
         "repo": "youtube"
       }
+    },
+    {
+      "nickname": "ninebot",
+      "type": "direct",
+      "data": {
+        "source": "vivo",
+        "value": "539479"
+      }
     }
   ]
 }
