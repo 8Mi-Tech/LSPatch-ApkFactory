@@ -103,6 +103,15 @@
         "source": "vivo",
         "value": "539479"
       }
+    },
+    {
+      "nickname": "支付宝",
+      "type": "direct",
+      "data": {
+        "source": "apkpure",
+        "value": "com.eg.android.AlipayGphone",
+        "version": "latest"
+      }
     }
   ]
 }

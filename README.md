@@ -45,3 +45,4 @@
 | 哔哩哔哩 | Bilibili | vivo应用商店 | latest |
 | YouTube | YouTube | APKMirror | latest |
 | 九号出行 | ninebot | vivo应用商店 | latest |
+| 支付宝 | 支付宝 | APKPure | latest |
